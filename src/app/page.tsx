@@ -1,6 +1,8 @@
+
+"use client";
 import Header from "@/components/landing/Header";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { use, useEffect } from "react";
 
 export default function Home() {
@@ -20,7 +22,7 @@ export default function Home() {
  }
 
   return (
-   <div className="min-h-screen bg-white">
+   <div className="min-h-screen bg-white/95">
     <Header showDashboardNav={false}></Header>
 
    </div>

@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header showDashboardNav={true} />
+      <Header showDashboardNav={false} />
       <main className="pt-16">
         {/* page content */}
       </main>

@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
   //  const { user, isAuthenticated, logout } = userAuthStore();
 
   // const router = useRouter();
-  const isAuthenticated = user;
+  const isAuthenticated =false;
 
   const pathname = usePathname();
   const getDashboardNavigation = (): NavigationItem[] => {
@@ -212,7 +212,41 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
             </DropdownMenu>
           </div>
         ):(
-          <div className="ll"></div>
+          <div className="flex items-center space-x-3">
+            {!isAuthenticated ? (
+              <>
+                <Link href="/login/patient">
+                  <Button
+                    variant="ghost"
+                    className="text-blue-900 text-[18px] hover:text-blue-700"
+                  >
+                    Log in
+                  </Button>
+                </Link>
+
+                <Link href="/signup/patient" className="hidden md:block">
+                  <Button className="w-fit bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold text-[1rem] py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-95 px-4 mr-4 ">
+                    Book Consultation
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <div className="flex items-center space-x-4 ">
+                <span className="hidden md:block text-sm text-gray-700 font-medium whitespace-nowrap">
+                  Welcome,&nbsp;{user?.name}
+                </span>
+
+                <Link href={`/${user?.type}/dashboard`}>
+                  <Button
+                    variant="ghost"
+                    className="text-blue-900 font-medium hover:text-blue-700"
+                  >
+                    Dashboard
+                  </Button>
+                </Link>
+              </div>
+            )}
+          </div>
         )}
       </div>
     </header>

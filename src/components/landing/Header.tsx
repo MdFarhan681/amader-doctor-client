@@ -29,7 +29,7 @@ interface HeaderProps {
 
 interface NavigationItem {
   label: string;
-  icon?: React.ComponentType<any>;
+  icon: React.ComponentType<{ className?: string }>;
   href: string;
   active: boolean;
 }
@@ -37,14 +37,15 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
   const user = {
     type: "patient",
     name: "John Doe",
-    email: "john.doe@example.com"
-    profileImage: ".placeholder.com/150",
+    email: "john.doe@example.com",
+    profileImage: "logo.png",
 
   };
 
   //  const { user, isAuthenticated, logout } = userAuthStore();
 
   // const router = useRouter();
+  const isAuthenticated = user;
 
   const pathname = usePathname();
   const getDashboardNavigation = (): NavigationItem[] => {
@@ -78,17 +79,17 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 mx-auto w-full max-w-screen-2xl px-4 sm:px-[7%]">
+    <header className="fixed inset-x-0 top-0 z-50 mx-auto w-full max-w-screen-2xl py-6">
       <div
-        className="
-            navbar rounded-2xl mt-4
+        className={`
+            navbar rounded-2xl py-4 px-3 mt-4
             shadow-2xl shadow-black/10
             backdrop-blur-md
             bg-[hsla(var(--b1)/0.3)]
             border border-base-300
             animate__animated animate__fadeInDown
             flex flex-wrap items-center justify-between
-          "
+          `}
       >
         {/* Left side -> logo  + navigation */}
         <div className="flex items-center space-x-8">
@@ -201,7 +202,7 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
                 </DropdownMenuItem>
                        <DropdownMenuSeparator />
                 <DropdownMenuItem
-                  onClick={handleLogout}
+                  // onClick={handleLogout}
                   className="text-red-600"
                 >
                   <LogOut className="w-4 h-4 mr-2" />

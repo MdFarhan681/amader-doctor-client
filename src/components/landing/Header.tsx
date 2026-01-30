@@ -79,14 +79,14 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 mx-auto w-full max-w-screen-2xl py-6">
+    <header className="fixed inset-x-0 top-0 z-50 mx-auto w-full max-w-screen-2xl py-6 px-[7%] ">
       <div
         className={`
             navbar rounded-2xl py-4 px-3 mt-4
             shadow-2xl shadow-black/10
-            backdrop-blur-md
+            backdrop-blur-xl
             bg-[hsla(var(--b1)/0.3)]
-            border border-base-300
+            border border-base-500
             animate__animated animate__fadeInDown
             flex flex-wrap items-center justify-between
           `}
@@ -99,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
             </div>
 
             <div className="text-2xl font-bold bg-gradient-to-br from-blue-600 to-blue-800  bg-clip-text text-transparent">
-              MediCare+
+              Amader Doctor
             </div>
           </Link>
 

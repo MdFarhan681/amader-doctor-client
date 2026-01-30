@@ -1,6 +1,8 @@
 'use client'
 
+import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
+import Up from "@/components/up";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -23,8 +25,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Header showDashboardNav={false} />
-      <main className="pt-16">
-        {/* page content */}
+      <main className="w-full">
+        <Up />
+
+        <Footer />
+    
       </main>
     </div>
   );

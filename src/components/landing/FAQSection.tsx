@@ -1,8 +1,6 @@
 "use client";
 
-import React from "react";
-
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
@@ -31,37 +29,65 @@ const faqs = [
     answer:
       "হ্যাঁ, Amader Doctor রোগীর তথ্যের গোপনীয়তা ও নিরাপত্তা নিশ্চিত করতে আধুনিক ডিজিটাল নিরাপত্তা ব্যবস্থা ব্যবহার করে।"
   }
-]
-
-
-
+];
 
 const FAQSection = () => {
+  const [mounted, setMounted] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; 
 
   return (
     <section className="max-w-5xl mx-auto px-6 py-16">
-      <h2 className="text-3xl font-semibold text-center mb-10">
-  সাধারণ জিজ্ঞাসা
+<div className="text-center mb-12">
+  {/* Small label */}
+        <p className="inline-block bg-blue-100 text-blue-600 text-sm font-medium px-3 py-1 rounded-full mb-2">
+        প্রশ্ন-উত্তর 
+        </p>
+      {/* Section Title */}
+      <h2 className="text-3xl font-semibold text-center mb-2">
+        সাধারণ জিজ্ঞাসা
       </h2>
 
+      {/* Subtitle */}
+      <p className="text-center text-gray-500 mb-10">
+        আপনার প্রায়শই জিজ্ঞাসিত প্রশ্নগুলোর উত্তর এখানে খুঁজে পাবেন
+      </p>
+</div>
+        
+
+      {/* FAQ Cards */}
       <div className="space-y-4">
         {faqs.map((faq, index) => (
-          <div key={index} className="border rounded-xl p-6 bg-white shadow-sm">
+          <div
+            key={index}
+            className="border rounded-xl p-6 bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-500"
+          >
             <button
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              onClick={() =>
+                setOpenIndex(openIndex === index ? null : index)
+              }
               className="flex justify-between items-center w-full text-left"
             >
-              <span className="text-lg ">{faq.question}</span>
+              <span className="text-lg transition-colors duration-300">
+                {faq.question}
+              </span>
+
               <ChevronDown
-                className={`transition-transform duration-300 ${
+                className={`transition-transform duration-300 text-gray-500 ${
                   openIndex === index ? "rotate-180" : ""
                 }`}
               />
             </button>
 
             {openIndex === index && (
-              <p className="mt-4 text-gray-600 leading-relaxed">{faq.answer}</p>
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                {faq.answer}
+              </p>
             )}
           </div>
         ))}

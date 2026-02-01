@@ -1,66 +1,70 @@
-import Image from "next/image"
-
 const Consultation = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">
+      
+      {/* Section Title */}
+      <div className="text-center mb-12">
+        {/* Small label */}
+        <p className="inline-block bg-blue-100 text-blue-600 text-sm font-medium px-3 py-1 rounded-full mb-2">
+         সহজ প্রক্রিয়া
+        </p>
+
+        {/* Main Heading */}
+        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+          কিভাবে আমাদের প্ল্যাটফর্ম কাজ করে?
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-gray-600 text-base lg:text-lg">
+          রেজিস্ট্রেশন থেকে প্রথম ভিডিও কনসালটেশন পর্যন্ত, আমরা প্রক্রিয়াটিকে সহজ করেছি।
+        </p>
+      </div>
+
+      {/* Content: Video + Steps */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
-        {/* Left: Real Image */}
+        {/* Left: YouTube Video */}
         <div className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-lg">
-          <Image
-            src="/consultataion.jpg"
-            alt="Online doctor consultation video call"
-            fill
-            className="object-cover"
-            priority
-          />
+          <iframe
+            className="w-full h-full rounded-2xl"
+            src="https://www.youtube.com/embed/0rfdcGF7YJ4?autoplay=1&mute=1&rel=0"
+            title="Online doctor consultation video call"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
 
-        {/* Right: Content */}
-      <div>
-  <p className="text-blue-600 font-semibold mb-2">
-    অ্যাপয়েন্টমেন্ট
-  </p>
+        {/* Right: Steps */}
+        <div className="space-y-6">
 
-  <h2 className="text-4xl font-bold mb-6 leading-snug">
-    কিভাবে শুরু করবেন <br /> আমাদের অ্যাপ ব্যবহার করে
-  </h2>
+          <Step
+            title="আপনার অ্যাকাউন্ট তৈরি করুন"
+            desc="সহজেই সাইন আপ করুন এবং শুরু করার জন্য আপনার প্রাথমিক প্রোফাইল পূরণ করুন।"
+          />
 
-  <p className="text-gray-600 mb-8">
-    Amader Doctor স্বাস্থ্যসেবা সহজ করে তোলে, রোগীদের যোগ্য ডাক্তারদের সাথে
-    নিরাপদ অনলাইন ভিডিও কনসালটেশনের মাধ্যমে সংযুক্ত করে।
-  </p>
+          <Step
+            title="ডাক্তার নির্বাচন করুন"
+            desc="নিশ্চিত ডাক্তারদের ব্রাউজ করুন এবং আপনার জন্য সঠিক বিশেষজ্ঞ নির্বাচন করুন।"
+          />
 
-  <div className="space-y-6">
+          <Step
+            title="অ্যাপয়েন্টমেন্ট বুক করুন"
+            desc="সুবিধাজনক সময় বেছে নিন এবং অনলাইনে আপনার অ্যাপয়েন্টমেন্ট নিশ্চিত করুন।"
+          />
 
-    <Step
-      title="আপনার অ্যাকাউন্ট তৈরি করুন"
-      desc="সহজেই সাইন আপ করুন এবং শুরু করার জন্য আপনার প্রাথমিক প্রোফাইল পূরণ করুন।"
-    />
+          <Step
+            title="ভিডিও কনসালটেশন শুরু করুন"
+            desc="নিরাপদ ভিডিও কল যোগ করুন এবং আপনার ডাক্তারকে পরামর্শ করুন।"
+          />
 
-    <Step
-      title="ডাক্তার নির্বাচন করুন"
-      desc="নিশ্চিত ডাক্তারদের ব্রাউজ করুন এবং আপনার জন্য সঠিক বিশেষজ্ঞ নির্বাচন করুন।"
-    />
-
-    <Step
-      title="অ্যাপয়েন্টমেন্ট বুক করুন"
-      desc="সুবিধাজনক সময় বেছে নিন এবং অনলাইনে আপনার অ্যাপয়েন্টমেন্ট নিশ্চিত করুন।"
-    />
-
-    <Step
-      title="ভিডিও কনসালটেশন শুরু করুন"
-      desc="নিরাপদ ভিডিও কল যোগ করুন এবং আপনার ডাক্তারকে পরামর্শ করুন।"
-    />
-
-  </div>
-</div>
+        </div>
 
       </div>
     </section>
   )
 }
 
+// Step Component
 type StepProps = {
   title: string;
   desc: string;
@@ -78,4 +82,4 @@ const Step = ({ title, desc }: StepProps) => (
   </div>
 )
 
-export default Consultation
+export default Consultation;

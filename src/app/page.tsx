@@ -1,9 +1,10 @@
-'use client'
+"use client";
 
 import Consultation from "@/components/landing/Consultation";
 import FAQSection from "@/components/landing/FAQSection";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
+import Slider from "@/components/landing/Slider";
 import Up from "@/components/up";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -12,7 +13,7 @@ export default function Home() {
   const router = useRouter();
 
   // TEMP user (replace with auth store later)
-  const user = { type: "patient" }; // 
+  const user = { type: "patient" }; //
 
   useEffect(() => {
     if (user?.type === "doctor") {
@@ -27,14 +28,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       <Header showDashboardNav={false} />
-      <main className="w-full">
-        <Up />
+      <Up />
+      <main className="w-full flex flex-col gap-12 md:gap-20 lg:gap-28 px-[7%]  ">
+        <Slider />
         <Consultation />
-  <FAQSection />
-        <Footer />
-      
-    
+        <FAQSection />
       </main>
+
+      <Footer />
     </div>
   );
 }

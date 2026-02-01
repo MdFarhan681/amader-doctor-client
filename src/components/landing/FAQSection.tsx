@@ -42,8 +42,8 @@ const FAQSection = () => {
   if (!mounted) return null; 
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-16">
-<div className="text-center mb-12">
+    <section className="w-full mx-auto  mb-10">
+<div className="text-center ">
   {/* Small label */}
         <p className="inline-block bg-blue-100 text-blue-600 text-sm font-medium px-3 py-1 rounded-full mb-2">
         প্রশ্ন-উত্তর 

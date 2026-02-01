@@ -1,5 +1,7 @@
 'use client'
 
+import Consultation from "@/components/landing/Consultation";
+import FAQSection from "@/components/landing/FAQSection";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
 import Up from "@/components/up";
@@ -27,8 +29,10 @@ export default function Home() {
       <Header showDashboardNav={false} />
       <main className="w-full">
         <Up />
-
+        <Consultation />
+  <FAQSection />
         <Footer />
+      
     
       </main>
     </div>

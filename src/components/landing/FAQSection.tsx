@@ -1,11 +1,73 @@
-import React from 'react'
+"use client";
+
+import React from "react";
+
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+
+const faqs = [
+  {
+    question: "অনলাইন ডাক্তারের পরামর্শের খরচ কত?",
+    answer:
+      "ডাক্তারের ধরন ও সেবার ওপর পরামর্শ ফি নির্ভর করে। Amader Doctor সাশ্রয়ী ও স্বচ্ছ মূল্যে অনলাইন চিকিৎসা সেবা দেওয়ার চেষ্টা করে।"
+  },
+  {
+    question: "আপনারা কি স্বাস্থ্য বীমা গ্রহণ করেন?",
+    answer:
+      "বর্তমানে Amader Doctor সরাসরি স্বাস্থ্য বীমা গ্রহণ করে না। তবে পরামর্শের রসিদ আপনার বীমা প্রতিষ্ঠানে জমা দিয়ে রিম্বার্সমেন্ট নেওয়া যেতে পারে।"
+  },
+  {
+    question: "কোন কোন রোগের জন্য অনলাইন চিকিৎসা নেওয়া যায়?",
+    answer:
+      "সাধারণ অসুস্থতা, ফলো-আপ চিকিৎসা, দীর্ঘমেয়াদি রোগ ব্যবস্থাপনা, মানসিক স্বাস্থ্য পরামর্শ এবং সাধারণ মেডিকেল পরামর্শের জন্য আমাদের ডাক্তারেরা সেবা প্রদান করেন।"
+  },
+  {
+    question: "Amader Doctor কি ২৪/৭ সেবা দেয়?",
+    answer:
+      "রোগীরা যেকোনো সময় পরামর্শের অনুরোধ করতে পারেন। তবে ডাক্তারের প্রাপ্যতা তাদের সময়সূচির ওপর নির্ভর করে।"
+  },
+  {
+    question: "অনলাইন চিকিৎসা কি নিরাপদ?",
+    answer:
+      "হ্যাঁ, Amader Doctor রোগীর তথ্যের গোপনীয়তা ও নিরাপত্তা নিশ্চিত করতে আধুনিক ডিজিটাল নিরাপত্তা ব্যবস্থা ব্যবহার করে।"
+  }
+]
+
+
+
 
 const FAQSection = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-export default FAQSection
+  return (
+    <section className="max-w-5xl mx-auto px-6 py-16">
+      <h2 className="text-3xl font-semibold text-center mb-10">
+  সাধারণ জিজ্ঞাসা
+      </h2>
+
+      <div className="space-y-4">
+        {faqs.map((faq, index) => (
+          <div key={index} className="border rounded-xl p-6 bg-white shadow-sm">
+            <button
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              className="flex justify-between items-center w-full text-left"
+            >
+              <span className="text-lg ">{faq.question}</span>
+              <ChevronDown
+                className={`transition-transform duration-300 ${
+                  openIndex === index ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {openIndex === index && (
+              <p className="mt-4 text-gray-600 leading-relaxed">{faq.answer}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default FAQSection;

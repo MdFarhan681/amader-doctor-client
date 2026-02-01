@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import {
   FaLinkedinIn,
@@ -11,6 +13,17 @@ import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
 
 const Footer = () => {
+//     const [year, setYear] = useState<number | null>(null)
+
+//     useEffect(() => {
+//     setYear(new Date().getFullYear())
+//   }, [])
+const [mounted, setMounted] = useState(false)
+
+useEffect(() => setMounted(true), [])
+
+if (!mounted) return null
+  
   return (
      <footer className="bg-gradient-to-r from-[#0b1324] to-[#0e1a33] text-gray-300 h-fit">
       <div className="max-w-7xl mx-auto px-6 py-10 ">
@@ -31,7 +44,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Quick links</h3>
             <ul className="space-y-2 text-sm">
-              {["Home", "Services", "Doctors", "Dashboard","FAQ"].map(
+              {["Home", "Services", "Doctors", "Dashboard","FAQ","About Us"].map(
                 (item) => (
                   <li
                     key={item}
@@ -91,7 +104,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} Biomedical Engineering,KUET.  All rights reserved.
+          © 2026 Biomedical Engineering,KUET.  All rights reserved.
         </div>
       </div>
     </footer>

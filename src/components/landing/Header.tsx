@@ -120,13 +120,13 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
         </div>
 
         {/* CENTER (desktop only) */}
-      <nav className="hidden md:flex items-center space-x-8">
+      <nav className="hidden md:flex items-center ">
   {middleNav.map((item) => (
     <Link
       key={item.href}
       href={item.href}
-      className={`nav-link ${
-        isActive(item.href) ? "active" : ""
+      className={`nav-link  transition-all duration-200 active:scale-95 px-4 rounded-2xl py-1  hover:shadow-md  hover:text-white ${
+        isActive(item.href) ? "active  " : ""
       }`}
     >
       {item.label}
@@ -199,20 +199,19 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
 
       {/* MOBILE DROPDOWN */}
       {mobileOpen && (
-        <div className=" md:hidden mt-3 rounded-2xl
-   bg-[hsla(var(--b1)/0.4)]
+       <div className="navbar rounded-2xl py-4 px-3 mt-4
+ shadow-2xl shadow-black/10
+ bg-gray-100/25 backdrop-blur-2xl 
 
-    backdrop-blur-xl
-    shadow-xl
-    border border-base-300">
-          <nav className="flex flex-col p-4 space-y-3">
+ border border-base-300">
+          <nav className="flex flex-col p-4 space-y-3 ">
             {middleNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                  onClick={() => setMobileOpen(false)}
-        className={`nav-link px-3 py-2 rounded-lg ${
-          isActive(item.href) ? "active" : ""
+        className={`nav-link px-3 py-2 rounded-lg hover:bg-blue-500 transition-all active:scale-97 duration-200 ${
+          isActive(item.href) ? "active bg-blue-500 " : ""
         }`}
               >
                 {item.label}

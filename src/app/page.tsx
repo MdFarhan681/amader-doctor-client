@@ -27,8 +27,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header showDashboardNav={false} />
-      <Up />
+   
+   
       <main className="w-full flex flex-col gap-12 md:gap-20 lg:gap-28 px-[7%]  ">
         <Slider />
         <Consultation />

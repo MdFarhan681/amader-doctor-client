@@ -4,6 +4,7 @@ import "./globals.css";
 import "animate.css";
 import Header from "@/components/landing/Header";
 import Up from "@/components/up";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,7 +46,7 @@ export default function RootLayout({
       <main>
         {children}
       </main>
-
+ <Toaster position="top-right" reverseOrder={false} />
       </body>
     </html>
   );

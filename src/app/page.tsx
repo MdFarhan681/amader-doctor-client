@@ -4,6 +4,7 @@ import Consultation from "@/components/landing/Consultation";
 import FAQSection from "@/components/landing/FAQSection";
 import Footer from "@/components/landing/Footer";
 import Header from "@/components/landing/Header";
+import OnlineDoctors from "@/components/landing/OnlineDoctors";
 import Slider from "@/components/landing/Slider";
 import Up from "@/components/up";
 import { useRouter } from "next/navigation";
@@ -30,6 +31,7 @@ export default function Home() {
    
    
       <main className="w-full flex flex-col gap-12 md:gap-20 lg:gap-28 px-[7%]  ">
+        <OnlineDoctors />
         <Slider />
         <Consultation />
         <FAQSection />

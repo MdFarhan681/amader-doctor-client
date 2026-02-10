@@ -29,4 +29,109 @@ export const doctors = [
     description:
       "ডায়াবেটিস, জ্বর ও সাধারণ রোগের অভিজ্ঞ চিকিৎসক।",
   },
+  {
+    id:9 ,
+    name: "ডাঃ নাজমুল ইসলাম",
+   
+    specialist: "মেডিসিন বিশেষজ্ঞ",
+    experience: 12,
+    rating: 4.6,
+    totalReviews: 88,
+    fee: "৬০০ টাকা",
+    availability: false,
+    institutions: "খুলনা জেনারেল হাসপাতাল",
+    isVerified: false,
+    description:
+      "ডায়াবেটিস, জ্বর ও সাধারণ রোগের অভিজ্ঞ চিকিৎসক।",
+  },
+  {
+    id: 3,
+    name: "ডাঃ নাজমুল ইসলাম",
+   
+    specialist: "মেডিসিন বিশেষজ্ঞ",
+    experience: 12,
+    rating: 4.6,
+    totalReviews: 88,
+    fee: "৬০০ টাকা",
+    availability: false,
+    institutions: "খুলনা জেনারেল হাসপাতাল",
+    isVerified: false,
+    description:
+      "ডায়াবেটিস, জ্বর ও সাধারণ রোগের অভিজ্ঞ চিকিৎসক।",
+  },
+  {
+    id: 4,
+    name: "ডাঃ নাজমুল ইসলাম",
+   
+    specialist: "মেডিসিন বিশেষজ্ঞ",
+    experience: 12,
+    rating: 4.6,
+    totalReviews: 88,
+    fee: "৬০০ টাকা",
+    availability: false,
+    institutions: "খুলনা জেনারেল হাসপাতাল",
+    isVerified: false,
+    description:
+      "ডায়াবেটিস, জ্বর ও সাধারণ রোগের অভিজ্ঞ চিকিৎসক।",
+  },
+  {
+    id: 5,
+    name: "ডাঃ নাজমুল ইসলাম",
+   
+    specialist: "মেডিসিন বিশেষজ্ঞ",
+    experience: 12,
+    rating: 4.6,
+    totalReviews: 88,
+    fee: "৬০০ টাকা",
+    availability: false,
+    institutions: "খুলনা জেনারেল হাসপাতাল",
+    isVerified: false,
+    description:
+      "ডায়াবেটিস, জ্বর ও সাধারণ রোগের অভিজ্ঞ চিকিৎসক।",
+  },
+  {
+    id: 6,
+    name: "ডাঃ নাজমুল ইসলাম",
+   
+    specialist: "মেডিসিন বিশেষজ্ঞ",
+    experience: 12,
+    rating: 4.6,
+    totalReviews: 88,
+    fee: "৬০০ টাকা",
+    availability: false,
+    institutions: "খুলনা জেনারেল হাসপাতাল",
+    isVerified: false,
+    description:
+      "ডায়াবেটিস, জ্বর ও সাধারণ রোগের অভিজ্ঞ চিকিৎসক।",
+  },
+  {
+    id: 7,
+    name: "ডাঃ নাজমুল ইসলাম",
+   
+    specialist: "মেডিসিন বিশেষজ্ঞ",
+    experience: 12,
+    rating: 4.6,
+    totalReviews: 88,
+    fee: "৬০০ টাকা",
+    availability: false,
+    institutions: "খুলনা জেনারেল হাসপাতাল",
+    isVerified: false,
+    description:
+      "ডায়াবেটিস, জ্বর ও সাধারণ রোগের অভিজ্ঞ চিকিৎসক।",
+  },
+  {
+    id: 8,
+    name: "ডাঃ নাজমুল ইসলাম",
+   
+    specialist: "মেডিসিন বিশেষজ্ঞ",
+    experience: 12,
+    rating: 4.6,
+    totalReviews: 88,
+    fee: "৬০০ টাকা",
+    availability: false,
+    institutions: "খুলনা জেনারেল হাসপাতাল",
+    isVerified: false,
+    description:
+      "ডায়াবেটিস, জ্বর ও সাধারণ রোগের অভিজ্ঞ চিকিৎসক।",
+  },
 ];

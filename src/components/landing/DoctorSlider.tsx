@@ -1,45 +1,35 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules"; // import modules from "swiper/modules"
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import DoctorCard from "../doctorCard";
-
-interface Doctor {
-  name: string;
-  photo: string;
-  specialist: string;
-  experience: number;
-  rating: number;
-  totalReviews: number;
-  fee: string;
-  description: string;
-  institutions: string;
-  isVerified: boolean;
-  availability: boolean;
-  gender: string;
-}
+import type { Doctor } from "../../types"; // Adjust the path to your types file
 
 export default function DoctorSlider({ doctors }: { doctors: Doctor[] }) {
   return (
     <Swiper
-      modules={[Autoplay, Navigation, Pagination]} // ✅ register modules here
+      modules={[Autoplay, Navigation, Pagination]} // ✅ FIX HERE
       spaceBetween={20}
       slidesPerView={1}
+      loop={true}
+      navigation
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
+      pagination={{ clickable: true }}
       breakpoints={{
         640: { slidesPerView: 2 },
         1024: { slidesPerView: 4 },
       }}
-      loop={true}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
-      navigation // enables prev/next arrows
-      pagination={{ clickable: true }} // clickable dots
     >
       {doctors.map((doctor) => (
-        <SwiperSlide key={doctor.name} className="flex justify-center">
+        <SwiperSlide key={doctor.id}>
           <DoctorCard doctor={doctor} />
         </SwiperSlide>
       ))}

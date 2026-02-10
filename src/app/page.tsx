@@ -31,8 +31,9 @@ export default function Home() {
    
    
       <main className="w-full flex flex-col gap-12 md:gap-20 lg:gap-28 px-[7%]  ">
-        <OnlineDoctors />
+       
         <Slider />
+         <OnlineDoctors />
         <Consultation />
         <FAQSection />
       </main>

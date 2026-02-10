@@ -6,23 +6,25 @@ export default function OnlineDoctors() {
 
   
   return (
-    <section className="max-w-7xl mx-auto px-4 py-10">
+    <section className="w-full mx-auto  py-10 ">
       
       {/* Section Title */}
       <div className="mb-8 text-center">
+         <p className="inline-block bg-blue-100 text-blue-600 text-sm font-medium px-3 py-1 rounded-full mb-2">
+         অনলাইন ডাক্তারগণ
+        </p>
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
-          আমাদের অভিজ্ঞ ডাক্তারগণ
+         এই মুহূর্তে আপনাদের সেবায় উপলব্ধ 
         </h1>
         <p className="text-gray-600 mt-2">
           ঘরে বসে অনলাইনে বিশেষজ্ঞ ডাক্তারের পরামর্শ নিন
         </p>
       </div>
 
-      {/* Doctor Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+     
        
        <DoctorSlider doctors={doctors} />
-      </div>
+ 
     </section>
   );
 }

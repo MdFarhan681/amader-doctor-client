@@ -1,29 +1,22 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-
+import { Autoplay } from "swiper/modules";
+import { Doctor } from "@/types/doctor";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 import DoctorCard from "../doctorCard";
-import type { Doctor } from "../../types"; // Adjust the path to your types file
 
 export default function DoctorSlider({ doctors }: { doctors: Doctor[] }) {
-  return (
+  const shouldLoop = doctors.length > 4;
+
+  return shouldLoop ? (
     <Swiper
-      modules={[Autoplay, Navigation, Pagination]} // ✅ FIX HERE
+      modules={[Autoplay]}
       spaceBetween={20}
-      slidesPerView={1}
-      loop={true}
-      navigation
-      autoplay={{
-        delay: 3000,
-        disableOnInteraction: false,
-      }}
-      pagination={{ clickable: true }}
+      loop={shouldLoop}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
       breakpoints={{
+        0: { slidesPerView: 1 },
         640: { slidesPerView: 2 },
         1024: { slidesPerView: 4 },
       }}
@@ -34,5 +27,11 @@ export default function DoctorSlider({ doctors }: { doctors: Doctor[] }) {
         </SwiperSlide>
       ))}
     </Swiper>
+  ) : (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {doctors.map((doctor) => (
+        <DoctorCard key={doctor.id} doctor={doctor} />
+      ))}
+    </div>
   );
 }

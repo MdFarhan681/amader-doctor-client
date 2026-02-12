@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { Star, CheckCircle } from "lucide-react";
+import { Star, CheckCircle, Link, ArrowRight } from "lucide-react";
+import router from "next/dist/shared/lib/router/router";
+import { useRouter } from "next/dist/client/components/navigation";
 
 interface Doctor {
   name: string;
@@ -14,6 +16,7 @@ interface Doctor {
   isVerified: boolean;
   availability: boolean;
   gender: string;
+  id: number;
 }
 
 const DoctorCard = ({ doctor }: { doctor: Doctor }) => {
@@ -21,7 +24,7 @@ const DoctorCard = ({ doctor }: { doctor: Doctor }) => {
     doctor.gender === "female" ? "/female-doctor.webp" : "/male-doctor.webp";
 
   const imageSrc = doctor.photo?.trim() ? doctor.photo : defaultImage;
-
+const router = useRouter();
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-md transition w-full max-w-xs mx-auto">
       {/* Image Section */}
@@ -85,12 +88,12 @@ const DoctorCard = ({ doctor }: { doctor: Doctor }) => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <p className="text-sm font-bold text-green-600"> <span className="text-[1.5rem] font-bold">৳</span> {doctor.fee}</p>
 
-          <button
-            className= "my-btn !text-[12px]"
-             
-          >
-            অ্যাপয়েন্টমেন্ট নিন
-          </button>
+      <button
+  className="my-btn !text-[12px]"
+  onClick={() => router.push(`/doctors/${doctor.id}`)}
+>
+  বিস্তারিত দেখুন
+</button>
         </div>
       </div>
     </div>

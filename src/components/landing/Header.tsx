@@ -185,7 +185,7 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
               </DropdownMenu>
             </>
           ) : (
-            <Link href="/login">
+            <Link href="/login/patient">
               <Button
                 variant="ghost"
                 className="my-btn"

@@ -8,9 +8,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Eye, EyeOff } from "lucide-react";
-// import { userAuthStore } from '@/store/authStore';
+
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { userAuthStore } from "../../store/authstore";
+
 
 interface AuthFormProps {
   type: "login" | "signup";
@@ -35,7 +37,7 @@ const AuthForm = ({ type, userRole }: AuthFormProps) => {
     loginDoctor,
     loading,
     error,
-  } = userAuthStor();
+  } = userAuthStore();
 
   const router = useRouter();
 
@@ -84,6 +86,10 @@ const AuthForm = ({ type, userRole }: AuthFormProps) => {
   const altLinkText = isSignup ? "Already a member?" : "Don't have an account?";
   const altLinkAction = isSignup ? "Sign in" : "Sign up";
   const altLinkPath = isSignup ? `/login/${userRole}` : `/signup/${userRole}`;
+
+
+
+
 
   return (
     <div className="w-full max-w-md mx-auto">
